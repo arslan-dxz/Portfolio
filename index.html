@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Arslan</title>
+    <link rel="icon" type="image/png" sizes="500x500" href="favicon-thug.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-neutral-950 text-gray-100 font-['Inter'] overflow-x-hidden transition-colors duration-500">
+
+    <div id="preloader">
+    <img src="arslan-website-gift.gif" height="2000px" width="2000px" alt="Loading Logo" class="preloader-logo">
+</div>
+
+<!-- CUSTOM CURSOR -->
+    <div id="custom-cursor" class="fixed pointer-events-none z-[99999] top-0 left-0 -translate-x-1/2 -translate-y-1/2 hidden lg:block">
+    <img src="infinity-1.png" id="cursor-default" alt="cursor" class="w-12 h-12 object-contain block">
+    <img src="infinity-2.png" id="cursor-hover" alt="cursor" class="w-12 h-12 object-contain hidden">
+</div>
+<!-- CUSTOM CURSOR -->
+
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <div class="absolute inset-0 opacity-[0.03] bg-noise"></div>
+        <div class="absolute inset-0 dark-texture opacity-40"></div>
+        
+        <svg class="absolute top-20 left-10 w-64 h-64 text-neutral-800 opacity-20 animate-float" viewBox="0 0 200 200">
+            <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="5,5"/>
+            <circle cx="100" cy="100" r="60" fill="none" stroke="currentColor" stroke-width="0.5"/>
+            <path d="M100 20 L100 180 M20 100 L180 100" stroke="currentColor" stroke-width="0.5" opacity="0.5"/>
+        </svg>
+        <svg class="absolute bottom-40 right-20 w-96 h-96 text-neutral-800 opacity-20 animate-float-reverse" viewBox="0 0 200 200">
+            <rect x="40" y="40" width="120" height="120" fill="none" stroke="currentColor" stroke-width="1" transform="rotate(45 100 100)"/>
+            <circle cx="100" cy="100" r="40" fill="none" stroke="currentColor" stroke-width="1"/>
+        </svg>
+        <svg class="absolute top-1/2 left-1/3 w-48 h-48 text-neutral-800 opacity-10 animate-spin-slow" viewBox="0 0 100 100">
+            <polygon points="50,5 95,50 50,95 5,50" fill="none" stroke="currentColor" stroke-width="1"/>
+        </svg>
+        <div class="absolute top-1/3 right-1/4 w-2 h-2 bg-neutral-700 rounded-full animate-pulse-glow"></div>
+        <div class="absolute bottom-1/4 left-1/4 w-3 h-3 bg-neutral-700 rounded-full animate-pulse-glow delay-1000"></div>
+        <div class="absolute top-1/4 right-1/3 w-2 h-2 bg-neutral-700 rounded-full animate-pulse-glow delay-2000"></div>
+    </div>
+
+    <nav class="fixed top-0 w-full bg-neutral-950/80 backdrop-blur-md border-b border-neutral-800 z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 animate-fade-in">
+                    <img src="https://image2url.com/r2/default/gifs/1771098125876-ab63beda-e942-4267-a863-da6c6564c7f4.gif"
+                    alt="Logo"
+                    class="h-[100px] w-[100px] cursor-pointer hover:opacity-80 transition-opacity">
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:scale-110">Home</a>
+                        <a href="#about" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:scale-110">About</a>
+                        <a href="#services" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:scale-110">Services</a>
+                        <a href="#designs" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:scale-110">Designs</a>
+                        <a href="#contact" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:scale-110">Contact</a>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle" class="relative w-16 h-8 rounded-full bg-neutral-800 border border-neutral-700 focus:outline-none overflow-hidden group transition-all duration-500 hover:scale-110 hover:shadow-lg hover:shadow-neutral-700/50">
+                        <div class="absolute inset-0 bg-gradient-to-r from-neutral-700 to-neutral-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div id="theme-slider" class="absolute top-1 left-1 w-6 h-6 rounded-full bg-white shadow-lg transform transition-all duration-500 flex items-center justify-center">
+                            <i data-lucide="moon" class="w-4 h-4 text-neutral-900 theme-icon-dark"></i>
+                            <i data-lucide="sun" class="w-4 h-4 text-amber-500 theme-icon-light hidden"></i>
+                        </div>
+                        <span class="absolute left-9 top-1/2 transform -translate-y-1/2 text-xs font-medium text-gray-400 theme-text-dark">Dark</span>
+                        <span class="absolute left-2 top-1/2 transform -translate-y-1/2 text-xs font-medium text-amber-500 theme-text-light hidden">Light</span>
+                    </button>
+                    
+                    <button class="md:hidden text-gray-300 hover:text-white" onclick="toggleMobileMenu()">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-neutral-900 border-b border-neutral-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-neutral-800 transition-all">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-neutral-800 transition-all">About</a>
+                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-neutral-800 transition-all">Services</a>
+                <a href="#designs" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-neutral-800 transition-all">Designs</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-neutral-800 transition-all">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-neutral-900 via-neutral-950 to-black z-0"></div>
+        
+        <div class="relative z-10 text-center px-4 max-w-6xl mx-auto">
+            <div class="mb-6 animate-fade-in-up">
+                <span class="inline-block py-1 px-3 rounded-full bg-neutral-800/50 border border-neutral-700 text-sm text-neutral-400 mb-4 hover:border-neutral-500 transition-all duration-300 cursor-default">
+                    Welcome to my Creative Space
+                </span>
+            </div>
+            
+            <h1 class="font-['Great_Vibes'] text-6xl md:text-8xl lg:text-9xl text-white mb-6 animate-fade-in-up delay-100 hover:scale-105 transition-transform duration-500 cursor-default leading-tight">
+    <span class="visual-text">Visual</span> <span class="glow-red">Artistry</span>
+            </h1>
+            
+            <h2 class="font-['Playfair_Display'] text-2xl md:text-4xl text-neutral-400 italic mb-8 animate-fade-in-up delay-200">
+                Graphic Designer & Creative Director
+            </h2>
+            
+            <p class="text-lg md:text-xl text-neutral-500 max-w-2xl mx-auto mb-12 animate-fade-in-up delay-300 leading-relaxed">
+                Transforming ideas into stunning visual experiences through innovative design solutions
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-400">
+                <a href="#designs" class="group relative px-8 py-4 bg-white text-neutral-900 rounded-full font-semibold overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-white/20 fire-glow">
+                    <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-neutral-200 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                    <span class="relative flex items-center gap-2">
+                        View Portfolio
+                        <i data-lucide="arrow-right" class="w-5 h-5 transform group-hover:translate-x-1 transition-transform"></i>
+                    </span>
+                </a>
+                <a href="#contact" class="group relative px-8 py-4 border border-neutral-700 text-white rounded-full font-semibold overflow-hidden transition-all duration-300 hover:scale-105 hover:border-neutral-500 hover:bg-neutral-900 fire-glow">
+                    <span class="relative flex items-center gap-2">
+                        Get in Touch
+                        <i data-lucide="mail" class="w-5 h-5 transform group-hover:rotate-12 transition-transform"></i>
+                    </span>
+                </a>
+            </div>
+
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <i data-lucide="chevron-down" class="w-8 h-8 text-neutral-600 hover:text-white transition-colors cursor-pointer"></i>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="relative py-32 bg-neutral-950 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative group reveal-on-scroll">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-neutral-800 to-neutral-700 rounded-2xl opacity-20 group-hover:opacity-30 transition-opacity duration-500 blur-xl"></div>
+                    <div class="relative overflow-hidden rounded-2xl">
+                        <img src="https://image2url.com/r2/default/images/1771093846044-98616986-ee65-4764-b446-1ccce465049b.png" alt="Workspace" class="w-full h-auto transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/80 to-transparent"></div>
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-neutral-900 rounded-full flex items-center justify-center border border-neutral-800 group-hover:scale-110 transition-transform duration-500">
+                        <div class="flex-shrink-0 animate-fade-in">
+                    <img src="https://image2url.com/r2/default/gifs/1771098125876-ab63beda-e942-4267-a863-da6c6564c7f4.gif"
+                    alt="Logo"
+                    class="h-[170px] w-[170px] cursor-pointer hover:opacity-80 transition-opacity">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reveal-on-scroll delay-100">
+                    <span class="text-neutral-500 text-sm font-semibold tracking-widest uppercase mb-2 block">About Me</span>
+                    <h2 class="font-['Great_Vibes'] text-5xl md:text-6xl text-white mb-6">
+  <span class="glow-blue">Crafting</span> Vistal 
+  <span class="glow-yellow">Stories</span>
+</h2>
+                    <p class="text-neutral-400 text-lg leading-relaxed mb-6">
+                        I'm a passionate graphic designer with over 5 years of experience in creating compelling visual narratives. My work spans across brand identity, digital marketing, and creative illustration.
+                    </p>
+                    <p class="text-neutral-500 leading-relaxed mb-8">
+                        I believe in the power of design to transform businesses and connect with audiences on an emotional level. Every project is an opportunity to push creative boundaries and deliver exceptional results.
+                    </p>
+                    
+                    <div class="grid grid-cols-3 gap-6 mb-8">
+                        <div class="text-center p-4 bg-neutral-900/50 rounded-lg border border-neutral-800 hover:border-neutral-600 transition-all duration-300 hover:-translate-y-1">
+                            <span class="block text-3xl font-bold text-white mb-1">50+</span>
+                            <span class="text-sm text-neutral-500">Projects</span>
+                        </div>
+                        <div class="text-center p-4 bg-neutral-900/50 rounded-lg border border-neutral-800 hover:border-neutral-600 transition-all duration-300 hover:-translate-y-1">
+                            <span class="block text-3xl font-bold text-white mb-1">10+</span>
+                            <span class="text-sm text-neutral-500">Clients</span>
+                        </div>
+                        <div class="text-center p-4 bg-neutral-900/50 rounded-lg border border-neutral-800 hover:border-neutral-600 transition-all duration-300 hover:-translate-y-1">
+                            <span class="block text-3xl font-bold text-white mb-1">100%</span>
+                            <span class="text-sm text-neutral-500">Happy Clients</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="relative py-32 bg-neutral-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-20 reveal-on-scroll">
+                <span class="text-neutral-500 text-sm font-semibold tracking-widest uppercase mb-2 block">What I Offer</span>
+                <h2 class="font-['Great_Vibes'] text-5xl md:text-6xl text-white mb-4"><span class="visual-text">Services</span></h2>
+                <p class="text-neutral-400 max-w-2xl mx-auto">Comprehensive design solutions tailored to elevate your brand</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="group relative p-8 bg-neutral-950 rounded-2xl border border-neutral-800 hover:border-neutral-600 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-neutral-800/50 reveal-on-scroll">
+                    <div class="absolute inset-0 bg-gradient-to-br from-neutral-800/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative">
+                        <div class="w-14 h-14 bg-neutral-800 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                            <i data-lucide="palette" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Brand Identity</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed">Creating cohesive brand systems including logos, color palettes, and visual guidelines that resonate with your target audience.</p>
+                    </div>
+                </div>
+
+                <div class="group relative p-8 bg-neutral-950 rounded-2xl border border-neutral-800 hover:border-neutral-600 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-neutral-800/50 reveal-on-scroll delay-100">
+                    <div class="absolute inset-0 bg-gradient-to-br from-neutral-800/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative">
+                        <div class="w-14 h-14 bg-neutral-800 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                            <i data-lucide="image" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Social Media Design</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed">Eye-catching social media graphics, Instagram posts, stories, and marketing materials that drive engagement.</p>
+                    </div>
+                </div>
+
+                <div class="group relative p-8 bg-neutral-950 rounded-2xl border border-neutral-800 hover:border-neutral-600 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-neutral-800/50 reveal-on-scroll delay-200">
+                    <div class="absolute inset-0 bg-gradient-to-br from-neutral-800/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative">
+                        <div class="w-14 h-14 bg-neutral-800 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                            <i data-lucide="video" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Thumbnail Design</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed">High-converting YouTube thumbnails and video graphics that capture attention and increase click-through rates.</p>
+                    </div>
+                </div>
+
+                <div class="group relative p-8 bg-neutral-950 rounded-2xl border border-neutral-800 hover:border-neutral-600 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-neutral-800/50 reveal-on-scroll">
+                    <div class="absolute inset-0 bg-gradient-to-br from-neutral-800/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative">
+                        <div class="w-14 h-14 bg-neutral-800 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                            <i data-lucide="pen-tool" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Illustration</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed">Custom digital illustrations and vector art that bring unique character and personality to your projects.</p>
+                    </div>
+                </div>
+
+                <div class="group relative p-8 bg-neutral-950 rounded-2xl border border-neutral-800 hover:border-neutral-600 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-neutral-800/50 reveal-on-scroll delay-100">
+                    <div class="absolute inset-0 bg-gradient-to-br from-neutral-800/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative">
+                        <div class="w-14 h-14 bg-neutral-800 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                            <i data-lucide="layout" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">UI/UX Design</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed">User-centered interface designs for web and mobile applications that prioritize usability and aesthetics.</p>
+                    </div>
+                </div>
+
+                <div class="group relative p-8 bg-neutral-950 rounded-2xl border border-neutral-800 hover:border-neutral-600 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-neutral-800/50 reveal-on-scroll delay-200">
+                    <div class="absolute inset-0 bg-gradient-to-br from-neutral-800/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative">
+                        <div class="w-14 h-14 bg-neutral-800 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                            <i data-lucide="printer" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Print Design</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed">Professional print materials including brochures, business cards, posters, and packaging design.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="designs" class="relative py-32 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal-on-scroll">
+                <span class="text-neutral-500 text-sm font-semibold tracking-widest uppercase mb-2 block">My Work</span>
+                <h2 class="font-['Great_Vibes'] text-5xl md:text-6xl text-white mb-4"><span class="visual-text">Port</span><span class="glow-red">folio</span></h2>
+                <p class="text-neutral-400 max-w-2xl mx-auto">Explore my latest creative projects across various design disciplines</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-4 mb-12 reveal-on-scroll">
+                <button class="filter-btn active px-6 py-3 rounded-full border border-neutral-700 text-white bg-neutral-800 hover:bg-neutral-700 transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-neutral-500" data-filter="all">
+                    All Work
+                </button>
+                <button class="filter-btn px-6 py-3 rounded-full border border-neutral-700 text-neutral-400 hover:text-white hover:border-neutral-500 hover:bg-neutral-800 transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-neutral-500" data-filter="thumbnails">
+                    Thumbnails
+                </button>
+                <button class="filter-btn px-6 py-3 rounded-full border border-neutral-700 text-neutral-400 hover:text-white hover:border-neutral-500 hover:bg-neutral-800 transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-neutral-500" data-filter="socials">
+                    Socials
+                </button>
+                <button class="filter-btn px-6 py-3 rounded-full border border-neutral-700 text-neutral-400 hover:text-white hover:border-neutral-500 hover:bg-neutral-800 transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-neutral-500" data-filter="logos">
+                    Logos
+                </button>
+                <button class="filter-btn px-6 py-3 rounded-full border border-neutral-700 text-neutral-400 hover:text-white hover:border-neutral-500 hover:bg-neutral-800 transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-neutral-500" data-filter="illustrations">
+                    Illustrations
+                </button>
+            </div>
+
+            <div id="portfolio-grid">
+                <div class="portfolio-item soft-fire-glow thumbnails group relative overflow-hidden rounded-xl cursor-pointer reveal-on-scroll" onclick="openModal(this)">
+                    <div class="bg-neutral-900 relative overflow-hidden">
+                        <img src="https://image2url.com/r2/default/images/1771082622522-e61738b6-ffe3-4263-860f-7e6cfa53bebc.png" alt="Thumbnail Design" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
+                            <div>
+                                <span class="text-xs text-neutral-400 uppercase tracking-wider">Thumbnail</span>
+                                <h3 class="text-xl font-bold text-white mt-1">Uber Drives</h3>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4 w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/20 hover:scale-110">
+                            <i data-lucide="maximize-2" class="w-5 h-5 text-white"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item soft-fire-glow thumbnails group relative overflow-hidden rounded-xl cursor-pointer reveal-on-scroll delay-100" onclick="openModal(this)">
+                    <div class="bg-neutral-900 relative overflow-hidden">
+                        <img src="https://image2url.com/r2/default/images/1771082742439-9e95353e-8606-4002-acfe-85c0d774ece3.png" alt="Thumbnail Design" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
+                            <div>
+                                <span class="text-xs text-neutral-400 uppercase tracking-wider">Thumbnail</span>
+                                <h3 class="text-xl font-bold text-white mt-1">Real Estates</h3>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4 w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/20 hover:scale-110">
+                            <i data-lucide="maximize-2" class="w-5 h-5 text-white"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item soft-fire-glow thumbnails group relative overflow-hidden rounded-xl cursor-pointer reveal-on-scroll delay-100" onclick="openModal(this)">
+                    <div class="bg-neutral-900 relative overflow-hidden">
+                        <img src="https://image2url.com/r2/default/images/1771083199210-0d0cf41e-0a31-4fbe-aed6-0882a0a272d0.png" alt="Thumbnail Design" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
+                            <div>
+                                <span class="text-xs text-neutral-400 uppercase tracking-wider">Thumbnail</span>
+                                <h3 class="text-xl font-bold text-white mt-1">Stock Market</h3>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4 w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/20 hover:scale-110">
+                            <i data-lucide="maximize-2" class="w-5 h-5 text-white"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item soft-fire-glow thumbnails group relative overflow-hidden rounded-xl cursor-pointer reveal-on-scroll delay-100" onclick="openModal(this)">
+                    <div class="bg-neutral-900 relative overflow-hidden">
+                        <img src="https://image2url.com/r2/default/images/1771083257290-e83aa7d5-7427-4f16-93b3-d21c11a70a13.png" alt="Thumbnail Design" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
+                            <div>
+                                <span class="text-xs text-neutral-400 uppercase tracking-wider">Thumbnail</span>
+                                <h3 class="text-xl font-bold text-white mt-1">Podcast</h3>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4 w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/20 hover:scale-110">
+                            <i data-lucide="maximize-2" class="w-5 h-5 text-white"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item soft-fire-glow thumbnails group relative overflow-hidden rounded-xl cursor-pointer reveal-on-scroll delay-100" onclick="openModal(this)">
+                    <div class="bg-neutral-900 relative overflow-hidden">
+                        <img src="https://image2url.com/r2/default/images/1771083301047-5412073e-810a-47cc-a624-10afefd626c5.png" alt="Thumbnail Design" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
+                            <div>
+                                <span class="text-xs text-neutral-400 uppercase tracking-wider">Thumbnail</span>
+                                <h3 class="text-xl font-bold text-white mt-1">Reviews</h3>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4 w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/20 hover:scale-110">
+                            <i data-lucide="maximize-2" class="w-5 h-5 text-white"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item soft-fire-glow thumbnails group relative overflow-hidden rounded-xl cursor-pointer reveal-on-scroll delay-100" onclick="openModal(this)">
+                    <div class="bg-neutral-900 relative overflow-hidden">
+                        <img src="https://image2url.com/r2/default/images/1771083341991-cf9d9124-97d7-410d-87fc-4bc0e138712d.png" alt="Thumbnail Design" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
+                            <div>
+                                <span class="text-xs text-neutral-400 uppercase tracking-wider">Thumbnail</span>
+                                <h3 class="text-xl font-bold text-white mt-1">Real Estates</h3>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4 w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/20 hover:scale-110">
+                            <i data-lucide="maximize-2" class="w-5 h-5 text-white"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item soft-fire-glow thumbnails group relative overflow-hidden rounded-xl cursor-pointer reveal-on-scroll delay-100" onclick="openModal(this)">
+                    <div class="bg-neutral-900 relative overflow-hidden">
+                        <img src="https://image2url.com/r2/default/images/1771083484213-8fee400c-2773-4a86-984e-9a5f30fe8818.png" alt="Thumbnail Design" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
+                            <div>
+                                <span class="text-xs text-neutral-400 uppercase tracking-wider">Thumbnail</span>
+                                <h3 class="text-xl font-bold text-white mt-1">Stock Market</h3>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4 w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/20 hover:scale-110">
+                            <i data-lucide="maximize-2" class="w-5 h-5 text-white"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item soft-fire-glow thumbnails group relative overflow-hidden rounded-xl cursor-pointer reveal-on-scroll delay-100" onclick="openModal(this)">
+                    <div class="bg-neutral-900 relative overflow-hidden">
+                        <img src="https://image2url.com/r2/default/images/1771083667443-03d90d6b-d5d6-48b6-91d3-33d2786a3755.png" alt="Thumbnail Design" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
+                            <div>
+                                <span class="text-xs text-neutral-400 uppercase tracking-wider">Thumbnail</span>
+                                <h3 class="text-xl font-bold text-white mt-1">Reviews</h3>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4 w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/20 hover:scale-110">
+                            <i data-lucide="maximize-2" class="w-5 h-5 text-white"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item soft-fire-glow thumbnails group relative overflow-hidden rounded-xl cursor-pointer reveal-on-scroll delay-100" onclick="openModal(this)">
+                    <div class="bg-neutral-900 relative overflow-hidden">
+                        <img src="https://image2url.com/r2/default/images/1771083867714-48782595-960f-49f7-aca4-6a1935064cf6.png" alt="Thumbnail Design" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
+                            <div>
+                                <span class="text-xs text-neutral-400 uppercase tracking-wider">Thumbnail</span>
+                                <h3 class="text-xl font-bold text-white mt-1">Before/After </h3>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4 w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/20 hover:scale-110">
+                            <i data-lucide="maximize-2" class="w-5 h-5 text-white"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item neon-blue-glow socials group relative overflow-hidden rounded-xl cursor-pointer reveal-on-scroll delay-200" onclick="openModal(this)">
+                    <div class="bg-neutral-900 relative overflow-hidden">
+                        <img src="https://image2url.com/r2/default/images/1771086268692-b211ba10-75aa-4334-9fc2-24aa62bc25f6.png" alt="Social Media Design" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
+                            <div>
+                                <span class="text-xs text-neutral-400 uppercase tracking-wider">Social Media</span>
+                                <h3 class="text-xl font-bold text-white mt-1">Transport</h3>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4 w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/20 hover:scale-110">
+                            <i data-lucide="maximize-2" class="w-5 h-5 text-white"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item neon-blue-glow socials group relative overflow-hidden rounded-xl cursor-pointer reveal-on-scroll" onclick="openModal(this)">
+                    <div class=" bg-neutral-900 relative overflow-hidden">
+                        <img src="https://image2url.com/r2/default/images/1771086334922-48477808-15c2-449f-9cdb-92b9fe499d38.jpeg" alt="Social Media Design" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
+                            <div>
+                                <span class="text-xs text-neutral-400 uppercase tracking-wider">Social Media</span>
+                                <h3 class="text-xl font-bold text-white mt-1">Gaming</h3>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4 w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/20 hover:scale-110">
+                            <i data-lucide="maximize-2" class="w-5 h-5 text-white"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item neon-blue-glow socials group relative overflow-hidden rounded-xl cursor-pointer reveal-on-scroll" onclick="openModal(this)">
+                    <div class=" bg-neutral-900 relative overflow-hidden">
+                        <img src="https://image2url.com/r2/default/images/1771086718057-edfc6a5a-d918-4f28-824b-50a35e8304d1.png" alt="Social Media Design" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
+                            <div>
+                                <span class="text-xs text-neutral-400 uppercase tracking-wider">Social Media</span>
+                                <h3 class="text-xl font-bold text-white mt-1">Food</h3>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4 w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/20 hover:scale-110">
+                            <i data-lucide="maximize-2" class="w-5 h-5 text-white"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item neon-blue-glow socials group relative overflow-hidden rounded-xl cursor-pointer reveal-on-scroll" onclick="openModal(this)">
+                    <div class=" bg-neutral-900 relative overflow-hidden">
+                        <img src="https://image2url.com/r2/default/images/1771086793426-b74708ae-ac0d-4eaf-bc68-9a3be4eff910.jpeg" alt="Social Media Design" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
+                            <div>
+                                <span class="text-xs text-neutral-400 uppercase tracking-wider">Social Media</span>
+                                <h3 class="text-xl font-bold text-white mt-1">Gaming</h3>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4 w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/20 hover:scale-110">
+                            <i data-lucide="maximize-2" class="w-5 h-5 text-white"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item neon-blue-glow socials group relative overflow-hidden rounded-xl cursor-pointer reveal-on-scroll" onclick="openModal(this)">
+                    <div class=" bg-neutral-900 relative overflow-hidden">
+                        <img src="https://image2url.com/r2/default/images/1771086866087-641cd505-46b1-4f92-9646-4337c063328a.png" alt="Social Media Design" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
+                            <div>
+                                <span class="text-xs text-neutral-400 uppercase tracking-wider">Social Media</span>
+                                <h3 class="text-xl font-bold text-white mt-1">Rentals</h3>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4 w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/20 hover:scale-110">
+                            <i data-lucide="maximize-2" class="w-5 h-5 text-white"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item neon-blue-glow socials group relative overflow-hidden rounded-xl cursor-pointer reveal-on-scroll" onclick="openModal(this)">
+                    <div class=" bg-neutral-900 relative overflow-hidden">
+                        <img src="https://image2url.com/r2/default/images/1771086916394-43f25881-447b-4856-8780-12743d3c2521.png" alt="Social Media Design" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
+                            <div>
+                                <span class="text-xs text-neutral-400 uppercase tracking-wider">Social Media</span>
+                                <h3 class="text-xl font-bold text-white mt-1">Yoga</h3>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4 w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/20 hover:scale-110">
+                            <i data-lucide="maximize-2" class="w-5 h-5 text-white"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item neon-blue-glow socials group relative overflow-hidden rounded-xl cursor-pointer reveal-on-scroll" onclick="openModal(this)">
+                    <div class=" bg-neutral-900 relative overflow-hidden">
+                        <img src="https://image2url.com/r2/default/images/1771086991290-79896f3e-7779-4b45-ab34-4db9bb32a522.png" alt="Social Media Design" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
+                            <div>
+                                <span class="text-xs text-neutral-400 uppercase tracking-wider">Social Media</span>
+                                <h3 class="text-xl font-bold text-white mt-1">Travel</h3>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4 w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/20 hover:scale-110">
+                            <i data-lucide="maximize-2" class="w-5 h-5 text-white"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item neon-blue-glow socials group relative overflow-hidden rounded-xl cursor-pointer reveal-on-scroll" onclick="openModal(this)">
+                    <div class=" bg-neutral-900 relative overflow-hidden">
+                        <img src="https://image2url.com/r2/default/images/1771087034460-833d3c90-4fef-4d24-bba7-4d56e8e8dda3.png" alt="Social Media Design" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
+                            <div>
+                                <span class="text-xs text-neutral-400 uppercase tracking-wider">Social Media</span>
+                                <h3 class="text-xl font-bold text-white mt-1">Food</h3>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4 w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/20 hover:scale-110">
+                            <i data-lucide="maximize-2" class="w-5 h-5 text-white"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item neon-blue-glow socials group relative overflow-hidden rounded-xl cursor-pointer reveal-on-scroll" onclick="openModal(this)">
+                    <div class=" bg-neutral-900 relative overflow-hidden">
+                        <img src="https://image2url.com/r2/default/images/1771087073311-d6328323-87cd-42d0-9e31-0ace9e2f935e.png" alt="Social Media Design" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
+                            <div>
+                                <span class="text-xs text-neutral-400 uppercase tracking-wider">Social Media</span>
+                                <h3 class="text-xl font-bold text-white mt-1">Rentals</h3>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4 w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/20 hover:scale-110">
+                            <i data-lucide="maximize-2" class="w-5 h-5 text-white"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item neon-blue-glow logos group relative overflow-hidden rounded-xl cursor-pointer reveal-on-scroll delay-100" onclick="openModal(this)">
+                    <div class="bg-neutral-900 relative overflow-hidden flex items-center justify-center p-8">
+                        <div class="w-full max-w-[300px]  bg-neutral-800 rounded-2xl flex items-center justify-center relative overflow-hidden">
+                            <img src="https://image2url.com/r2/default/images/1771087723425-e251113e-f597-42ef-92d8-f295586f5ce8.png" alt="Logo Design" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-4">
+                                <div>
+                                    <span class="text-xs text-neutral-400 uppercase tracking-wider">Logo</span>
+                                    <h3 class="text-lg font-bold text-white mt-1">Tattoo Studio</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item neon-blue-glow logos group relative overflow-hidden rounded-xl cursor-pointer reveal-on-scroll delay-200" onclick="openModal(this)">
+                    <div class="bg-neutral-900 relative overflow-hidden flex items-center justify-center p-8">
+                        <div class="w-full max-w-[300px]  bg-neutral-800 rounded-2xl flex items-center justify-center relative overflow-hidden">
+                            <img src="https://image2url.com/r2/default/images/1771088033210-3a55f8c1-8b27-4826-b913-e4c4683947ce.png" alt="Logo Design" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-4">
+                                <div>
+                                    <span class="text-xs text-neutral-400 uppercase tracking-wider">Logo</span>
+                                    <h3 class="text-lg font-bold text-white mt-1">Fragrance</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item neon-blue-glow logos group relative overflow-hidden rounded-xl cursor-pointer reveal-on-scroll delay-200" onclick="openModal(this)">
+                    <div class="bg-neutral-900 relative overflow-hidden flex items-center justify-center p-8">
+                        <div class="w-full max-w-[300px]  bg-neutral-800 rounded-2xl flex items-center justify-center relative overflow-hidden">
+                            <img src="https://image2url.com/r2/default/images/1771088121543-99f6462a-c106-424f-b50a-3e94f6bdc068.jpeg" alt="Logo Design" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-4">
+                                <div>
+                                    <span class="text-xs text-neutral-400 uppercase tracking-wider">Logo</span>
+                                    <h3 class="text-lg font-bold text-white mt-1">Name</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item neon-blue-glow logos group relative overflow-hidden rounded-xl cursor-pointer reveal-on-scroll delay-200" onclick="openModal(this)">
+                    <div class="bg-neutral-900 relative overflow-hidden flex items-center justify-center p-8">
+                        <div class="w-full max-w-[300px]  bg-neutral-800 rounded-2xl flex items-center justify-center relative overflow-hidden">
+                            <img src="https://image2url.com/r2/default/images/1771089030053-b7819604-7eff-4ed7-bc07-06fc59bed46f.png" alt="Logo Design" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-4">
+                                <div>
+                                    <span class="text-xs text-neutral-400 uppercase tracking-wider">Logo</span>
+                                    <h3 class="text-lg font-bold text-white mt-1">Electric Store</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item neon-blue-glow logos group relative overflow-hidden rounded-xl cursor-pointer reveal-on-scroll delay-200" onclick="openModal(this)">
+                    <div class="bg-neutral-900 relative overflow-hidden flex items-center justify-center p-8">
+                        <div class="w-full max-w-[300px]  bg-neutral-800 rounded-2xl flex items-center justify-center relative overflow-hidden">
+                            <img src="https://image2url.com/r2/default/images/1771089114948-3f31c67c-f1b0-4ae7-876e-dc866afb9d0e.png" alt="Logo Design" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-4">
+                                <div>
+                                    <span class="text-xs text-neutral-400 uppercase tracking-wider">Logo</span>
+                                    <h3 class="text-lg font-bold text-white mt-1">Name</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item neon-blue-glow logos group relative overflow-hidden rounded-xl cursor-pointer reveal-on-scroll delay-200" onclick="openModal(this)">
+                    <div class="bg-neutral-900 relative overflow-hidden flex items-center justify-center p-8">
+                        <div class="w-full max-w-[300px]  bg-neutral-800 rounded-2xl flex items-center justify-center relative overflow-hidden">
+                            <img src="https://image2url.com/r2/default/images/1771144680006-bbcd9c66-84a0-41da-b58c-d70aca969a0c.png" alt="Logo Design" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-4">
+                                <div>
+                                    <span class="text-xs text-neutral-400 uppercase tracking-wider">Logo</span>
+                                    <h3 class="text-lg font-bold text-white mt-1">Name</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item soft-fire-glow illustrations group relative overflow-hidden rounded-xl cursor-pointer reveal-on-scroll" onclick="openModal(this)">
+                    <div class=" bg-neutral-900 relative overflow-hidden">
+                        <img src="https://image2url.com/r2/default/images/1771088570535-97c79e33-9cf8-44f8-a5fe-edc6954b3834.png" alt="Illustration" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
+                            <div>
+                                <span class="text-xs text-neutral-400 uppercase tracking-wider">Illustration</span>
+                                <h3 class="text-xl font-bold text-white mt-1">Gaming Poster</h3>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4 w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/20 hover:scale-110">
+                            <i data-lucide="maximize-2" class="w-5 h-5 text-white"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item soft-fire-glow illustrations group relative overflow-hidden rounded-xl cursor-pointer reveal-on-scroll delay-100" onclick="openModal(this)">
+                    <div class=" bg-neutral-900 relative overflow-hidden">
+                        <img src="https://image2url.com/r2/default/images/1771088751526-8830ef0c-d256-4fea-ae3a-7ec4d1aadb41.png" alt="Illustration" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
+                            <div>
+                                <span class="text-xs text-neutral-400 uppercase tracking-wider">Illustration</span>
+                                <h3 class="text-xl font-bold text-white mt-1">Transport</h3>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4 w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/20 hover:scale-110">
+                            <i data-lucide="maximize-2" class="w-5 h-5 text-white"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item soft-fire-glow illustrations group relative overflow-hidden rounded-xl cursor-pointer reveal-on-scroll delay-100" onclick="openModal(this)">
+                    <div class=" bg-neutral-900 relative overflow-hidden">
+                        <img src="https://image2url.com/r2/default/images/1771089212944-90705d36-8ce4-4a2e-8243-e31f1707df0d.png" alt="Illustration" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
+                            <div>
+                                <span class="text-xs text-neutral-400 uppercase tracking-wider">Illustration</span>
+                                <h3 class="text-xl font-bold text-white mt-1">Yoga Poster</h3>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4 w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/20 hover:scale-110">
+                            <i data-lucide="maximize-2" class="w-5 h-5 text-white"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="relative py-32 bg-neutral-900 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div class="reveal-on-scroll">
+                    <span class="text-neutral-500 text-sm font-semibold tracking-widest uppercase mb-2 block">Get in Touch</span>
+                    <h2 class="font-['Great_Vibes'] text-5xl md:text-6xl text-white mb-6">
+  <span class="glow-green">Let's </span><span class="visual-text">Create </span> 
+  <span class="glow-blue">Together</span>
+</h2>
+                    <p class="text-neutral-400 text-lg mb-8 leading-relaxed">
+                        Ready to bring your vision to life? I'd love to hear about your project. Let's discuss how we can work together to create something amazing.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4 group">
+                            <div class="w-12 h-12 bg-neutral-800 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <i data-lucide="mail" class="w-5 h-5 text-white"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-neutral-500">Email</p>
+                                <p class="text-white font-medium">marslan.gpt@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4 group">
+                            <div class="w-12 h-12 bg-neutral-800 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-white"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-neutral-500">Location</p>
+                                <p class="text-white font-medium">G-8/1 Islamabad, Pakistan</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4 group">
+                            <div class="w-12 h-12 bg-neutral-800 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <i data-lucide="clock" class="w-5 h-5 text-white"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-neutral-500">Availability</p>
+                                <p class="text-white font-medium">24/7</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal-on-scroll delay-100">
+                    <form id="contact-form" class="space-y-6 bg-neutral-950 p-8 rounded-2xl border border-neutral-800">
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-400 mb-2">Name</label>
+                            <input type="text" name="user_name" required class="w-full px-4 py-3 bg-neutral-900 border border-neutral-800 rounded-lg text-white focus:outline-none focus:border-neutral-600 focus:ring-1 focus:ring-neutral-600 transition-all duration-300" placeholder="Your name">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-400 mb-2">Email</label>
+                            <input type="email" name="user_email" required class="w-full px-4 py-3 bg-neutral-900 border border-neutral-800 rounded-lg text-white focus:outline-none focus:border-neutral-600 focus:ring-1 focus:ring-neutral-600 transition-all duration-300" placeholder="your@email.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-400 mb-2">Project Type</label>
+                            <select name="project_type" class="w-full px-4 py-3 bg-neutral-900 border border-neutral-800 rounded-lg text-white focus:outline-none focus:border-neutral-600 focus:ring-1 focus:ring-neutral-600 transition-all duration-300">
+                                <option>Brand Identity</option>
+                                <option>Social Media Design</option>
+                                <option>Illustration</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-400 mb-2">Message</label>
+                            <textarea name="message" required rows="4" class="w-full px-4 py-3 bg-neutral-900 border border-neutral-800 rounded-lg text-white focus:outline-none focus:border-neutral-600 focus:ring-1 focus:ring-neutral-600 transition-all duration-300 resize-none" placeholder="Tell me about your project..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-4 bg-white text-neutral-900 rounded-lg font-semibold hover:bg-neutral-200 transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-2 group">
+                            Send Message
+                            <i data-lucide="send" class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial -->
+        <section id="testimonials" class="relative py-24 bg-neutral-950 overflow-hidden border-t border-neutral-900">
+    <div class="max-w-7xl mx-auto px-4 mb-12 text-center reveal-on-scroll">
+        <span class="text-neutral-500 text-sm font-semibold tracking-widest uppercase mb-2 block">Client Reviews</span>
+        <h2 class="font-['Great_Vibes'] text-5xl md:text-6xl text-white mb-4">Feed <span class="glow-blue">back</span></h2>
+    </div>
+
+    <div class="testimonial-container flex">
+        <div class="testimonial-track">
+            <div class="testimonial-card soft-fire-glow">
+                <i data-lucide="quote" class="w-8 h-8 text-neutral-600 mb-4"></i>
+                <p class="text-neutral-300 italic mb-6">"Arslan nailed the logo. Clean, professional, and perfect for my brand. He really cares about the tiny details."</p>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center text-white font-bold">SJ</div>
+                    <div>
+                        <h4 class="text-white font-bold text-sm">Sarah Jenkins</h4>
+                        <p class="text-neutral-500 text-xs">Small Business Owner</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card neon-blue-glow">
+                <i data-lucide="quote" class="w-8 h-8 text-neutral-600 mb-4"></i>
+                <p class="text-neutral-300 italic mb-6">"These thumbnails are next level. Our click-through rate doubled because he knows how to make designs stand out."</p>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center text-white font-bold">DC</div>
+                    <div>
+                        <h4 class="text-white font-bold text-sm">David Chen</h4>
+                        <p class="text-neutral-500 text-xs">Content Creator</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card soft-fire-glow">
+                <i data-lucide="quote" class="w-8 h-8 text-neutral-600 mb-4"></i>
+                <p class="text-neutral-300 italic mb-6">"He just 'gets' the vision immediately. Fast, creative, and made posters that people actually stop to look at."</p>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center text-white font-bold">ER</div>
+                    <div>
+                        <h4 class="text-white font-bold text-sm">Elena Rodriguez</h4>
+                        <p class="text-neutral-500 text-xs">Marketing Lead</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card soft-fire-glow">
+                <i data-lucide="quote" class="w-8 h-8 text-neutral-600 mb-4"></i>
+                <p class="text-neutral-300 italic mb-6">"The thumbnails Arslan designed increased my CTR by 15%. His eye for modern high-impact design is unmatched."</p>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center text-white font-bold">JD</div>
+                    <div>
+                        <h4 class="text-white font-bold text-sm">John Doe</h4>
+                        <p class="text-neutral-500 text-xs">Content Creator</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card neon-blue-glow">
+                <i data-lucide="quote" class="w-8 h-8 text-neutral-600 mb-4"></i>
+                <p class="text-neutral-300 italic mb-6">"Incredible brand identity work. He transformed our vision into a professional visual narrative seamlessly."</p>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center text-white font-bold">AS</div>
+                    <div>
+                        <h4 class="text-white font-bold text-sm">Alice Smith</h4>
+                        <p class="text-neutral-500 text-xs">Startup Founder</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card soft-fire-glow">
+                <i data-lucide="quote" class="w-8 h-8 text-neutral-600 mb-4"></i>
+                <p class="text-neutral-300 italic mb-6">"Fast, creative, and professional. The posters for our gaming event were exactly what we needed."</p>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center text-white font-bold">MK</div>
+                    <div>
+                        <h4 class="text-white font-bold text-sm">Mike Kaiser</h4>
+                        <p class="text-neutral-500 text-xs">Esports Lead</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Testimonial -->
+
+    <footer class="relative bg-neutral-950 border-t border-neutral-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+                <div class="text-center md:text-left">
+                    <span class="font-['Great_Vibes'] text-3xl text-white">Muhammad Arslan</span>
+                    <p class="text-neutral-500 text-sm mt-2">Creating visual experiences that inspire</p>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <a href="https://www.instagram.com/arslan.gpt/" class="group relative w-12 h-12 bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500 rounded-full flex items-center justify-center overflow-hidden transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-pink-500/30 animate-float-slow">
+                        <div class="absolute inset-0 bg-gradient-to-br from-purple-700 via-pink-700 to-orange-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <i data-lucide="instagram" class="w-6 h-6 text-white relative z-10 transform group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300"></i>
+                        <div class="absolute inset-0 rounded-full border-2 border-white/20 group-hover:border-white/40 transition-colors duration-300"></div>
+                    </a>
+
+                    <a href="#" class="group relative w-12 h-12 bg-[#0077b5] rounded-full flex items-center justify-center overflow-hidden transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-[#0077b5]/30 animate-float-slow delay-100">
+                        <div class="absolute inset-0 bg-[#005885] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <i data-lucide="linkedin" class="w-6 h-6 text-white relative z-10 transform group-hover:-translate-y-0.5 transition-transform duration-300"></i>
+                        <div class="absolute inset-0 rounded-full border-2 border-white/20 group-hover:border-white/40 transition-colors duration-300"></div>
+                    </a>
+
+                    <a href="https://wa.link/bamgvk" class="group relative w-12 h-12 bg-[#25D366] rounded-full flex items-center justify-center overflow-hidden transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-[#25D366]/30 animate-float-slow delay-200">
+                        <div class="absolute inset-0 bg-[#128C7E] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <i data-lucide="message-circle" class="w-6 h-6 text-white relative z-10 transform group-hover:rotate-12 transition-transform duration-300"></i>
+                        <div class="absolute inset-0 rounded-full border-2 border-white/20 group-hover:border-white/40 transition-colors duration-300"></div>
+                    </a>
+                </div>
+
+                <div class="text-center md:text-right">
+                    <p class="text-neutral-500 text-sm">© 2024 Portfolio. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="image-modal" class="fixed inset-0 bg-black/95 z-[60] hidden items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <button onclick="closeModal()" class="absolute top-6 right-6 text-white/70 hover:text-white transition-colors z-50">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <div class="relative max-w-6xl max-h-[90vh] w-full flex items-center justify-center">
+            <img id="modal-image" src="" alt="Full size" class="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
